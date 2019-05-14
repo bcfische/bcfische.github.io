@@ -1,0 +1,10 @@
+body { background-color:royalblue; margin-left:50px; margin-right:50px; }
+.navbar { background-color:gainsboro; }
+.jumbotron { background-color:white; margin-top:50px; padding:25px; }
+.jumbotron h1 { font-size:32px; font-weight:bold; }
+.jumbotron h2 { font-size:26px; font-weight:bold; }
+a img { border: 1px solid white; } 
+a img:hover { border: 1px solid black; }
+@media only screen and (min-width : 480px) {
+    .navbar { background-color:beige; }
+}
