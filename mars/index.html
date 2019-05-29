@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission To Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Welcome to the Red Planet</h1>
+      <p>News. Weather. Images. Facts.</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get New Data</a></p>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h2><b><u>News</u></b></h2>
+        <h3><b>{{ mission.news_title }}</b></h3>
+        <h4>{{ mission.news_text }}</h4>
+      </div>
+      <div class="col-md-6">
+        <h2><b><u>Weather</u></b></h2>
+        <h3><b>From The Mars Curiosity Rover</b></h3>
+        <h4>{{ mission.weather }}.</h4>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-7">
+        <h2><b><u>Featured Image</u></b></h2>
+        <img src="{{ mission.featured_image_url }}" width="90%">
+      </div>
+      <div class="col-md-5">
+        <h2><b><u>Planet Facts</u></b></h2>
+        {{ mission.facts_table | safe }}
+      </div>
+    </div>
+    <hr>
+    <h2><b><u>Hemispheres</u></b></h2>
+    {% for h in mission.hemispheres %}
+    <div>
+      <h3>{{ h.title }}</h3>
+      <img src="{{ h.img_url }}">
+    </div>
+    {% endfor %}
+  </div>
+</body>
+
+</html>
